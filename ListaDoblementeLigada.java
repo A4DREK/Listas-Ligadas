@@ -7,6 +7,20 @@ public class ListaDoblementeLigada<T> {
         if (indice < 0 || indice > this.elementos) {
             throw new IndexOutOfBoundsException("Índice fuera del rango permitido.");
         }
+        Nodo<T> nuevoNodo = new Nodo<>(elemento);
+        if(indice == 0){
+            nuevoNodo.setSiguiente(cabeza);
+            nuevoNodo.setAnterior(null);
+        }
+
+        for(int i = 0; i < indice - 1; i++){
+            cabeza = cabeza.getSiguiente();
+        }
+        nuevoNodo.setAnterior(cabeza);
+        nuevoNodo.setSiguiente(cabeza.getSiguiente());
+        this.cabeza.getSiguiente().setAnterior(nuevoNodo);
+        this.cabeza.setSiguiente(nuevoNodo);
+        
         return;
     }
 
