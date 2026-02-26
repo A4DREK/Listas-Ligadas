@@ -2,6 +2,7 @@ public class ListaDoblementeLigada<T> {
     private Nodo<T> cabeza;
     private int elementos;
 
+    //Cosa a hacer
     public void add(int indice, T elemento) {
         if (indice < 0 || indice > this.elementos) {
             throw new IndexOutOfBoundsException("Índice fuera del rango permitido.");
@@ -9,6 +10,7 @@ public class ListaDoblementeLigada<T> {
         return;
     }
 
+    //Cosa a hacer
     public boolean add(T elemento) {
         return true;
     }
@@ -30,6 +32,7 @@ public class ListaDoblementeLigada<T> {
         return false;
     }
 
+    //Cosa a hacer
     public T remove(int indice) {
         if (indice < 0 || indice > this.elementos - 1) {
             throw new IndexOutOfBoundsException("Índice fuera del rango permitido.");
@@ -37,10 +40,11 @@ public class ListaDoblementeLigada<T> {
         return null;
     }
 
+    //Cosa a hacer
     public boolean remove(Nodo<T> objeto) {
         if (objeto == null) {
             return false;
-        }
+        }   
 
         return true;
     }
